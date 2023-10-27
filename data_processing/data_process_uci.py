@@ -17,7 +17,7 @@ from sklearn.model_selection import StratifiedShuffleSplit
 def format_data_x(datafile):
     x_data = None
     for item in datafile:
-        item_data = np.loadtxt(item, dtype=np.float)
+        item_data = np.loadtxt(item, dtype=np.float32)
         if x_data is None:
             x_data = np.zeros((len(item_data), 1))
         x_data = np.hstack((x_data, item_data))
@@ -43,7 +43,7 @@ def load_domain_data(domain_idx):
     :param domain_idx:
     :return: X and y data of the entire domain
     """
-    data_dir = '/home/clayton/Project/HAR/TTA_HAR/data/uci/'
+    data_dir = './data/uci/'
     saved_filename = 'ucihar_domain_' + domain_idx + '_wd.data' # with domain label
 
     if os.path.isfile(data_dir + saved_filename) == True:

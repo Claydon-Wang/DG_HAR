@@ -40,7 +40,7 @@ def load_domain_data(domain_idx):
     :param domain_idx:
     :return: X and y data of the entire domain
     """
-    data_dir = '/home/clayton/Project/HAR/TTA_HAR/data/oppo/'
+    data_dir = './data/oppo/'
     saved_filename = 'oppor_domain_' + domain_idx + '_wd.data' # with domain label
     if os.path.isfile(data_dir + saved_filename) == True:
         data = np.load(data_dir + saved_filename, allow_pickle=True)
